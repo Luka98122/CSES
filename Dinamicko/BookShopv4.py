@@ -28,11 +28,14 @@ for i in range(n_books):
 
 time_start = time.perf_counter()
 for i in range(n_books):
+    if i == 4:
+        a = 2
     for w in range(budget + 1):
         if w < books[i][0]:
             grid[i][w] = grid[i - 1][w]
         else:
             grid[i][w] = max(books[i][1] + grid[i - 1][w - books[i][0]], grid[i - 1][w])
+    a = 2
 
 ## 0.6000
 time_elapsed = time.perf_counter() - time_start
